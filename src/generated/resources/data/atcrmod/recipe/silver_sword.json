@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "weapons",
+  "key": {
+    "A": "atcrmod:silver_ingot",
+    "S": "atcrmod:leather_wrapped_handle"
+  },
+  "pattern": [
+    "A",
+    "A",
+    "S"
+  ],
+  "result": {
+    "id": "atcrmod:silver_sword"
+  }
+}

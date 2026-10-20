@@ -1,0 +1,19 @@
+{
+  "item.atcrmod.steel_ingot": "Steel Ingot",
+  "item.atcrmod.silver_ingot": "Silver Ingot",
+  "item.atcrmod.raw_silver": "Raw Steel",
+  "item.atcrmod.lotus_flower": "Lotus Flower",
+  "item.atcrmod.leather_wrapped_handle": "Leather Wrapped Handle",
+  "item.atcrmod.silver_sword": "Silver Sword",
+
+  "block.atcrmod.steel_block": "Steel Block",
+  "block.atcrmod.silver_ore": "Silver Ore",
+  "block.atcrmod.deepslate_silver_ore": "Deepslate Silver Ore",
+
+  "effect.atcrmod.mother_revenge": "Mother's Revenge",
+  "effect.atcrmod.mother_revenge.description": "Mother punishes those who violate the bounds of mortal life",
+
+  "creativetab.atcrmod.actr_tab": "Against The Creeping Rot",
+
+  "key.atcr.create_life": "Create Life"
+}
