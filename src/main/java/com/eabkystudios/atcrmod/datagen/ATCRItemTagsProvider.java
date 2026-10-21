@@ -2,7 +2,7 @@ package com.eabkystudios.atcrmod.datagen;
 
 import com.eabkystudios.atcrmod.AgainstTheCreepingRot;
 import com.eabkystudios.atcrmod.item.ATCRItems;
-import com.eabkystudios.tags.ATCRTags;
+import com.eabkystudios.atcrmod.tags.ATCRTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.ItemTags;
