@@ -22,13 +22,11 @@ public class AgainstTheCreepingRotDataGen {
         PackOutput packOutput = generator.getPackOutput();
 
         generator.addProvider(true, new ATCRModelProvider(packOutput, AgainstTheCreepingRot.MODID));
-
         generator.addProvider(true, new ATCRBlockTagsProvider(packOutput, lookupProvider, AgainstTheCreepingRot.MODID));
         generator.addProvider(true, new ATCRItemTagsProvider(packOutput, lookupProvider, AgainstTheCreepingRot.MODID));
-
         generator.addProvider(true, new LootTableProvider(packOutput, Collections.emptySet(),
                 List.of(new LootTableProvider.SubProviderEntry(ATCRBlockLootTableProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
-
         generator.addProvider(true, new ATCRRecipeProvider.Runner(packOutput, lookupProvider));
+        generator.addProvider(true, new ATCRDatapackProvider(packOutput, lookupProvider));
     }
 }

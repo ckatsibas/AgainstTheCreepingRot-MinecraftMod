@@ -1,4 +1,4 @@
-package com.eabkystudios.tags;
+package com.eabkystudios.atcrmod.tags;
 
 import com.eabkystudios.atcrmod.AgainstTheCreepingRot;
 import net.minecraft.resources.Identifier;
