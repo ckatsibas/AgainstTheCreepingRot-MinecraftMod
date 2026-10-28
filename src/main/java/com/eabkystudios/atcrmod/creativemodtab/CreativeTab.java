@@ -30,6 +30,10 @@ public class CreativeTab {
                         output.accept(ATCRItems.LOTUS_FLOWER);
                         output.accept(ATCRItems.LEATHER_WRAPPED_HANDLE);
                         output.accept(ATCRItems.SILVER_SWORD);
+                        output.accept(ATCRItems.STEEL_SWORD);
+                        output.accept(ATCRBlocks.GRASSY_COBBLESTONE);
+                        output.accept(ATCRBlocks.POWERED_FURNACE);
+                        output.accept(ATCRItems.TRAVELER_SWORD);
                     })
                     .build());
 
