@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "atcrmod:block/powered_furnace"
+  }
+}

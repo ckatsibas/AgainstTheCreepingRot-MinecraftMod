@@ -4,6 +4,7 @@ import com.eabkystudios.atcrmod.AgainstTheCreepingRot;
 import com.eabkystudios.atcrmod.food.ATCRFoods;
 import com.eabkystudios.atcrmod.item.custom.SilverSwordItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ToolMaterial;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -25,7 +26,11 @@ public class ATCRItems {
 
     /*WEAPONS*/
     public static final DeferredItem<Item> SILVER_SWORD = ITEMS.registerItem("silver_sword",
-            properties -> new SilverSwordItem(properties.sword(ATCRToolTiers.SILVER, 2, -2f)));
+            properties -> new SilverSwordItem(properties.sword(ATCRToolTiers.SILVER, 3, -2f)));
+    public static final DeferredItem<Item> STEEL_SWORD = ITEMS.registerItem("steel_sword",
+            properties -> new Item(properties.sword(ATCRToolTiers.STEEL, 3, -2.5f)));
+    public static final DeferredItem<Item> TRAVELER_SWORD = ITEMS.registerItem("traveler_sword",
+            properties -> new Item(properties.sword(ToolMaterial.IRON, 2, -2.5f)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

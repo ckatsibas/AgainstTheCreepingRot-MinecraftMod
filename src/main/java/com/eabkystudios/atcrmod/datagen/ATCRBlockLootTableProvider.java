@@ -18,6 +18,8 @@ public class ATCRBlockLootTableProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropSelf(ATCRBlocks.STEEL_BLOCK.get());
+        dropSelf(ATCRBlocks.GRASSY_COBBLESTONE.get());
+        dropSelf(ATCRBlocks.POWERED_FURNACE.get());
 
         add(ATCRBlocks.SILVER_ORE.get(),
                 createOreDrop(ATCRBlocks.SILVER_ORE.get(), ATCRItems.RAW_SILVER.get()));
