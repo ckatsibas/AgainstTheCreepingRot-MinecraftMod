@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "bottom": "atcrmod:block/powered_furnace_bottom",
+    "front": "atcrmod:block/powered_furnace_front_on",
+    "side": "atcrmod:block/powered_furnace_side",
+    "top": "atcrmod:block/powered_furnace_top"
+  }
+}

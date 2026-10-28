@@ -2,6 +2,8 @@ package com.eabkystudios.atcrmod;
 
 import com.eabkystudios.atcrmod.effect.ATCREffects;
 import com.eabkystudios.atcrmod.keymapping.ATCRKeyMappings;
+import com.eabkystudios.atcrmod.menu.ATCRMenuTypes;
+import com.eabkystudios.atcrmod.menu.custom.PoweredFurnaceScreen;
 import com.eabkystudios.atcrmod.networking.packet.SummonEntityPacketC2S;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
@@ -15,6 +17,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
 import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import net.neoforged.neoforge.client.network.ClientPacketDistributor;
@@ -48,5 +51,10 @@ public class AgainstTheCreepingRotClient {
     @SubscribeEvent
     public static void registeredKeyMappings(RegisterKeyMappingsEvent event){
         event.register(ATCRKeyMappings.PRESS_CREATE_LIFE.get());
+    }
+
+    @SubscribeEvent
+    public static void registerScreens(RegisterMenuScreensEvent event) {
+        event.register(ATCRMenuTypes.POWERED_FURNACE_MENU.get(), PoweredFurnaceScreen::new);
     }
 }

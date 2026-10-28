@@ -1,3 +1,8 @@
 Licenses / Credits
 
 For silver I used Hungry22's desings from Weekly Dot - Pack 1 by More&Better at https://mcmodels.net/products/13626/weekly-dot-pack-1
+The textures for grassy cobblestone are form https://github.com/Futureazoo/TextureRepository by Futureazoo
+“Traveler Sword | Polyjo” by @polyjo — https://blockbenchworkshop.com/model/polyjo/traveler-sword-polyjo
+“Dead Traveler (Skeleton)” by @polyjo — https://blockbenchworkshop.com/model/polyjo/dead-traveler-skeleton
+“Traveler Dagger | Polyjo” by @polyjo — https://blockbenchworkshop.com/model/polyjo/traveler-dagger-polyjo
+“Traveler Buckler | Polyjo” by @polyjo — https://blockbenchworkshop.com/model/polyjo/traveler-buckler-polyjo

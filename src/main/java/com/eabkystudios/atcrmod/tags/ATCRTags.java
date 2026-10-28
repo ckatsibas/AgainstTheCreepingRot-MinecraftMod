@@ -13,6 +13,7 @@ public class ATCRTags {
         public static final TagKey<Item> STEEL_ITEM = createTag("steel_item");
         public static final TagKey<Item> SILVER_ITEM = createTag("silver_item");
         public static final TagKey<Item> SILVER_REPAIRABLE = createTag("silver_repairable");
+        public static final TagKey<Item> STEEL_REPAIRABLE = createTag("steel_repairable");
 
         private static TagKey<Item> createTag(String name){
             return ItemTags.create(Identifier.fromNamespaceAndPath(AgainstTheCreepingRot.MODID, name));
