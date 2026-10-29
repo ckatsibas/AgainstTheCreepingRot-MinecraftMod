@@ -33,6 +33,7 @@ public class ATCRItemTagsProvider extends ItemTagsProvider {
 
         tag(ItemTags.SWORDS)
                 .add(ATCRItems.SILVER_SWORD.get())
-                .add(ATCRItems.SILVER_SWORD.get());
+                .add(ATCRItems.STEEL_SWORD.get())
+                .add(ATCRItems.TRAVELER_SWORD.get());
     }
 }

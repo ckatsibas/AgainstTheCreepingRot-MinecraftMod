@@ -7,6 +7,7 @@
   "item.atcrmod.silver_sword": "Silver Sword",
   "item.atcrmod.steel_sword": "Steel Sword",
   "item.atcrmod.traveler_sword": "Traveler's Sword",
+  "item.atcrmod.lost_traveler_spawn_egg": "Lost Traveler Spawn Egg",
 
   "block.atcrmod.steel_block": "Steel Block",
   "block.atcrmod.silver_ore": "Silver Ore",
@@ -16,6 +17,8 @@
 
   "effect.atcrmod.mother_revenge": "Mother's Revenge",
   "effect.atcrmod.mother_revenge.description": "Mother punishes those who violate the bounds of mortal life",
+
+  "entity.atcrmod.lost_traveler": "Lost Traveler",
 
   "creativetab.atcrmod.actr_tab": "Against The Creeping Rot",
 

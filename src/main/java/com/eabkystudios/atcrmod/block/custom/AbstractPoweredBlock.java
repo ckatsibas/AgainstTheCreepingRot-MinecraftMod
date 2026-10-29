@@ -53,8 +53,7 @@ public class AbstractPoweredBlock extends BaseEntityBlock {
     }
 
     @Override
-    public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player,
-                                       ItemStack toolStack, boolean willHarvest, FluidState fluid) {
+    public boolean onDestroyedByPlayer(BlockState state, Level level, BlockPos pos, Player player, ItemStack toolStack, boolean willHarvest, FluidState fluid) {
         if (level.getBlockEntity(pos) instanceof AbstractPoweredBlockEntity abstractPoweredBlockEntity) {
             abstractPoweredBlockEntity.drops();
         }

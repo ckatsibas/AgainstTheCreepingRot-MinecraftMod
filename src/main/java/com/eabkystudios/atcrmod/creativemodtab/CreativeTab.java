@@ -17,7 +17,7 @@ public class CreativeTab {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, AgainstTheCreepingRot.MODID);
 
     //TODO: make method that adds all current and new items and blocks
-    public static final Supplier<CreativeModeTab> ACTR_TAB = CREATIVE_MODE_TABS.register("actr_all_tab",
+    public static final Supplier<CreativeModeTab> ATCR_TAB = CREATIVE_MODE_TABS.register("actr_all_tab",
             ()-> CreativeModeTab.builder().icon(()->new ItemStack(ATCRItems.STEEL_INGOT.get()))
                     .title(Component.translatable("creativetab.atcrmod.actr_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
@@ -34,6 +34,11 @@ public class CreativeTab {
                         output.accept(ATCRBlocks.GRASSY_COBBLESTONE);
                         output.accept(ATCRBlocks.POWERED_FURNACE);
                         output.accept(ATCRItems.TRAVELER_SWORD);
+                        output.accept(ATCRItems.TRAVELER_DAGGER);
+                        output.accept(ATCRItems.RED_SHARD);
+                        output.accept(ATCRBlocks.CLUSTER_OF_RED);
+                        output.accept(ATCRItems.BATTERY_BASIC);
+                        output.accept(ATCRItems.LOST_TRAVELER_SPAWN_EGG);
                     })
                     .build());
 

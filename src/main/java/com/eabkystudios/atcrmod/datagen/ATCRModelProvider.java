@@ -3,12 +3,10 @@ package com.eabkystudios.atcrmod.datagen;
 import com.eabkystudios.atcrmod.AgainstTheCreepingRot;
 import com.eabkystudios.atcrmod.block.ATCRBlocks;
 import com.eabkystudios.atcrmod.item.ATCRItems;
-import io.netty.channel.unix.Socket;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
 import net.minecraft.client.data.models.MultiVariant;
-import net.minecraft.client.data.models.blockstates.BlockModelDefinitionGenerator;
 import net.minecraft.client.data.models.blockstates.MultiVariantGenerator;
 import net.minecraft.client.data.models.model.*;
 import net.minecraft.client.resources.model.sprite.Material;
@@ -17,16 +15,10 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import org.jspecify.annotations.NonNull;
-
 import java.util.function.BiConsumer;
-import java.util.function.Consumer;
-
 import static net.minecraft.client.data.models.BlockModelGenerators.*;
 
 public class ATCRModelProvider extends ModelProvider {
-    // public static BiConsumer<Identifier, ModelInstance> modelOutput;
-    // public static Consumer<BlockModelDefinitionGenerator> blockStateOutput;
-
     public ATCRModelProvider(PackOutput output, String modId) {
         super(output, modId);
     }
@@ -43,25 +35,27 @@ public class ATCRModelProvider extends ModelProvider {
         itemModels.declareCustomModelItem(ATCRItems.SILVER_SWORD.get());
         itemModels.declareCustomModelItem(ATCRItems.STEEL_SWORD.get());
         itemModels.declareCustomModelItem(ATCRItems.TRAVELER_SWORD.get());
+        itemModels.declareCustomModelItem(ATCRItems.TRAVELER_DAGGER.get());
+        // itemModels.declareCustomModelItem(ATCRItems.TRAVELER_SHIELD.get());
+        itemModels.generateFlatItem(ATCRItems.RED_SHARD.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ATCRItems.BATTERY_BASIC.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ATCRItems.LOST_TRAVELER_SPAWN_EGG.get(), ModelTemplates.FLAT_ITEM);
 
         /*BLOCKS*/
         blockModels.createTrivialCube(ATCRBlocks.STEEL_BLOCK.get());
         blockModels.createTrivialCube(ATCRBlocks.SILVER_ORE.get());
         blockModels.createTrivialCube(ATCRBlocks.SILVER_DEEPSLATE_ORE.get());
         blockModels.createTrivialCube(ATCRBlocks.GRASSY_COBBLESTONE.get());
-        blockModels.createFurnace(ATCRBlocks.POWERED_FURNACE.get(), TexturedModel.ORIENTABLE);
-
-
-
+        createPoweredBlock(blockModels, ATCRBlocks.POWERED_FURNACE.get(), TexturedModel.ORIENTABLE, blockModels.modelOutput);
+        blockModels.createTrivialCube(ATCRBlocks.CLUSTER_OF_RED.get());
     }
 
     /*METHODS*/
-    //TODO: make the top side use an "_on" texture
-    /*
-    public void createPoweredBlock(Block furnace, TexturedModel.Provider provider) {
-        MultiVariant normalModel = plainVariant(provider.create(furnace, modelOutput));
-        Material frontTexture = TextureMapping.getBlockTexture(furnace, "_front_on");
-        MultiVariant litModel = plainVariant(provider.get(furnace).updateTextures((t) -> t.put(TextureSlot.FRONT, frontTexture)).createWithSuffix(furnace, "_on", this.modelOutput));
-        blockStateOutput.accept(MultiVariantGenerator.dispatch(furnace).with(createBooleanModelDispatch(BlockStateProperties.LIT, litModel, normalModel)).with(ROTATION_HORIZONTAL_FACING));
-    }*/
+    public void createPoweredBlock(BlockModelGenerators blockModels, Block poweredBlock, TexturedModel.Provider provider, BiConsumer<Identifier, ModelInstance> modelOutput) {
+        MultiVariant normalModel = plainVariant(provider.create(poweredBlock, modelOutput));
+        Material frontTexture = TextureMapping.getBlockTexture(poweredBlock, "_front_on");
+        Material topTexture = TextureMapping.getBlockTexture(poweredBlock, "_top_on");
+        MultiVariant litModel = plainVariant(provider.get(poweredBlock).updateTextures(textures -> textures.put(TextureSlot.FRONT, frontTexture)).updateTextures(textures -> textures.put(TextureSlot.TOP, topTexture)).createWithSuffix(poweredBlock, "_on", modelOutput));
+        blockModels.blockStateOutput.accept(MultiVariantGenerator.dispatch(poweredBlock).with(createBooleanModelDispatch(BlockStateProperties.LIT, litModel, normalModel)).with(ROTATION_HORIZONTAL_FACING));
+    }
 }

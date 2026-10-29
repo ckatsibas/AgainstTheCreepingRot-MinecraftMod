@@ -1,29 +1,26 @@
 package com.eabkystudios.atcrmod;
 
-import com.eabkystudios.atcrmod.effect.ATCREffects;
+import com.eabkystudios.atcrmod.entity.ATCREntities;
+import com.eabkystudios.atcrmod.entity.client.ATCRModelLayerLocations;
+import com.eabkystudios.atcrmod.entity.client.LostTravelerModel;
+import com.eabkystudios.atcrmod.entity.client.LostTravelerRenderer;
 import com.eabkystudios.atcrmod.keymapping.ATCRKeyMappings;
 import com.eabkystudios.atcrmod.menu.ATCRMenuTypes;
 import com.eabkystudios.atcrmod.menu.custom.PoweredFurnaceScreen;
-import com.eabkystudios.atcrmod.networking.packet.SummonEntityPacketC2S;
 import com.mojang.logging.LogUtils;
-import net.minecraft.client.Minecraft;
-import net.minecraft.core.BlockPos;
-import net.minecraft.world.entity.EntityType;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
-import net.neoforged.neoforge.client.event.ClientTickEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
-import net.neoforged.neoforge.client.network.ClientPacketDistributor;
 import org.slf4j.Logger;
-
-import javax.naming.Context;
 
 // This class will not load on dedicated servers. Accessing client side code from here is safe.
 @Mod(value = AgainstTheCreepingRot.MODID, dist = Dist.CLIENT)
@@ -43,9 +40,12 @@ public class AgainstTheCreepingRotClient {
 
     @SubscribeEvent
     static void onClientSetup(FMLClientSetupEvent event) {
-        // Some client setup code
-        AgainstTheCreepingRot.LOGGER.info("HELLO FROM CLIENT SETUP");
-        AgainstTheCreepingRot.LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+        EntityRenderers.register(ATCREntities.LOST_TRAVELER.get(), LostTravelerRenderer::new);
+    }
+
+    @SubscribeEvent
+    public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
+        event.registerLayerDefinition(ATCRModelLayerLocations.LOST_TRAVELER, LostTravelerModel::createBodyLayer);
     }
 
     @SubscribeEvent

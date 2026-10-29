@@ -21,10 +21,9 @@ public class ATCRBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ATCRBlocks.GRASSY_COBBLESTONE.get());
         dropSelf(ATCRBlocks.POWERED_FURNACE.get());
 
-        add(ATCRBlocks.SILVER_ORE.get(),
-                createOreDrop(ATCRBlocks.SILVER_ORE.get(), ATCRItems.RAW_SILVER.get()));
-        add(ATCRBlocks.SILVER_DEEPSLATE_ORE.get(),
-                createOreDrop(ATCRBlocks.SILVER_DEEPSLATE_ORE.get(), ATCRItems.RAW_SILVER.get()));
+        add(ATCRBlocks.SILVER_ORE.get(), createOreDrop(ATCRBlocks.SILVER_ORE.get(), ATCRItems.RAW_SILVER.get()));
+        add(ATCRBlocks.SILVER_DEEPSLATE_ORE.get(), createOreDrop(ATCRBlocks.SILVER_DEEPSLATE_ORE.get(), ATCRItems.RAW_SILVER.get()));
+        add(ATCRBlocks.CLUSTER_OF_RED.get(), createOreDrop(ATCRBlocks.CLUSTER_OF_RED.get(), ATCRItems.RED_SHARD.get()));
 
     }
 

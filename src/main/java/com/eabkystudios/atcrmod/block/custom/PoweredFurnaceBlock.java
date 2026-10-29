@@ -41,7 +41,6 @@ public class PoweredFurnaceBlock extends AbstractPoweredBlock
         if(level.isClientSide()) {
             return null;
         }
-        return createTickerHelper(type, ATCRBlockEntities.POWERED_FURNACE_BE.get(), (level1, pos, state, entity) ->
-                entity.tick(level1, pos, state));
+        return createTickerHelper(type, ATCRBlockEntities.POWERED_FURNACE_BE.get(), (level1, pos, state, entity) -> entity.tick(level1, pos, state));
     }
 }
