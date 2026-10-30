@@ -88,7 +88,7 @@ public class LostTravelerModel extends EntityModel<LostTravelerRenderState> {
         this.root().getAllParts().forEach(ModelPart::resetPose);
         this.applyHeadRotation(state.yRot, state.xRot);
 
-        this.walkingAnimation.applyWalk(state.walkAnimationPos, state.walkAnimationSpeed, 2f, 2.5f);
+        this.walkingAnimation.applyWalk(state.walkAnimationPos, state.walkAnimationSpeed, 1.5f, 2f);
         this.idlingAnimation.apply(state.idleAnimationState, state.ageInTicks, 1f);
     }
 

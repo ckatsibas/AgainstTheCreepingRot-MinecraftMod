@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "red",
+  "key": {
+    "A": "atcrmod:red_shard"
+  },
+  "pattern": [
+    "AAA",
+    "AAA",
+    "AAA"
+  ],
+  "result": {
+    "id": "atcrmod:cluster_of_red"
+  }
+}

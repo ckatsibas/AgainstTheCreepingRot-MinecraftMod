@@ -9,6 +9,9 @@ import com.eabkystudios.atcrmod.menu.ATCRMenuTypes;
 import com.eabkystudios.atcrmod.menu.custom.PoweredFurnaceScreen;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.SpawnPlacementTypes;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -20,6 +23,7 @@ import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
+import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
 import org.slf4j.Logger;
 
 // This class will not load on dedicated servers. Accessing client side code from here is safe.
@@ -46,6 +50,11 @@ public class AgainstTheCreepingRotClient {
     @SubscribeEvent
     public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(ATCRModelLayerLocations.LOST_TRAVELER, LostTravelerModel::createBodyLayer);
+    }
+
+    @SubscribeEvent
+    public static void registerSpawnPlacements(RegisterSpawnPlacementsEvent event) {
+        event.register(ATCREntities.LOST_TRAVELER.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.WORLD_SURFACE, Mob::checkMobSpawnRules, RegisterSpawnPlacementsEvent.Operation.OR);
     }
 
     @SubscribeEvent

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "powered_blocks",
+  "key": {
+    "A": "atcrmod:battery_basic",
+    "B": "minecraft:bricks",
+    "F": "minecraft:furnace",
+    "S": "atcrmod:steel_block"
+  },
+  "pattern": [
+    "BAB",
+    "BFB",
+    "SSS"
+  ],
+  "result": {
+    "id": "atcrmod:powered_furnace"
+  }
+}

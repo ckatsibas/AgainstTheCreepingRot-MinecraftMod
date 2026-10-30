@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "atcrmod:item/lost_traveler_spawn_egg"
+  }
+}

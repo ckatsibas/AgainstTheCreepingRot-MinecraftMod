@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "minecraft:desert",
+  "spawners": {
+    "type": "atcrmod:lost_traveler",
+    "maxCount": 4,
+    "minCount": 1,
+    "weight": 2
+  }
+}
