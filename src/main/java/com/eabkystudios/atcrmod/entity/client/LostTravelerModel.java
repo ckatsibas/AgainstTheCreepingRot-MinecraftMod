@@ -25,6 +25,7 @@ public class LostTravelerModel extends EntityModel<LostTravelerRenderState> {
 
     private final KeyframeAnimation walkingAnimation;
     private final KeyframeAnimation idlingAnimation;
+    private final KeyframeAnimation attackAnimation;
 
     public LostTravelerModel(ModelPart root) {
         super (root);
@@ -45,6 +46,7 @@ public class LostTravelerModel extends EntityModel<LostTravelerRenderState> {
 
         this.walkingAnimation = LostTravelerAnimations.WALK.bake(root);
         this.idlingAnimation = LostTravelerAnimations.IDLE.bake(root);
+        this.attackAnimation = LostTravelerAnimations.SLASH.bake(root);
     }
 
     public static LayerDefinition createBodyLayer() {
@@ -89,7 +91,8 @@ public class LostTravelerModel extends EntityModel<LostTravelerRenderState> {
         this.applyHeadRotation(state.yRot, state.xRot);
 
         this.walkingAnimation.applyWalk(state.walkAnimationPos, state.walkAnimationSpeed, 1.5f, 2f);
-        this.idlingAnimation.apply(state.idleAnimationState, state.ageInTicks, 1f);
+        idlingAnimation.apply(state.idleAnimationState, state.ageInTicks, 1f);
+        attackAnimation.apply(state.attackAnimationState, state.ageInTicks, 1f);
     }
 
     private void applyHeadRotation(float headYaw, float headPitch) {

@@ -18,6 +18,7 @@ public class ATCREvents {
     @SubscribeEvent
     public static void registerPayload(RegisterPayloadHandlersEvent event){
         final PayloadRegistrar registrar = event.registrar("1").executesOn(HandlerThread.MAIN);
+
         registrar.playToServer(SummonEntityPacketC2S.TYPE, SummonEntityPacketC2S.STREAM_CODEC, ClientPayloadHandler::handleSummonEntityPacket);
     }
 

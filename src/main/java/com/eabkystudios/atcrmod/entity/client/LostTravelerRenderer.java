@@ -25,5 +25,6 @@ public class LostTravelerRenderer extends MobRenderer<LostTravelerEntity, LostTr
         super.extractRenderState(entity, state, partialTicks);
 
         state.idleAnimationState.copyFrom(entity.idleAnimationState);
+        state.attackAnimationState.copyFrom(entity.attackAnimationState);
     }
 }
