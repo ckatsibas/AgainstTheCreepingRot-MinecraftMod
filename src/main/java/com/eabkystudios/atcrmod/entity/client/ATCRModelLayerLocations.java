@@ -6,4 +6,5 @@ import net.minecraft.resources.Identifier;
 
 public class ATCRModelLayerLocations {
     public static final ModelLayerLocation LOST_TRAVELER = new ModelLayerLocation(Identifier.fromNamespaceAndPath(AgainstTheCreepingRot.MODID, "lost_traveler"), "main");
+    public static final ModelLayerLocation DEER = new ModelLayerLocation(Identifier.fromNamespaceAndPath(AgainstTheCreepingRot.MODID, "deer"), "main");
 }

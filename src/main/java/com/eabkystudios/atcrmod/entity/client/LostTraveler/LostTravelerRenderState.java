@@ -1,4 +1,4 @@
-package com.eabkystudios.atcrmod.entity.client;
+package com.eabkystudios.atcrmod.entity.client.LostTraveler;
 
 import net.minecraft.client.renderer.entity.state.LivingEntityRenderState;
 import net.minecraft.world.entity.AnimationState;

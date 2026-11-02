@@ -2,8 +2,10 @@ package com.eabkystudios.atcrmod;
 
 import com.eabkystudios.atcrmod.entity.ATCREntities;
 import com.eabkystudios.atcrmod.entity.client.ATCRModelLayerLocations;
-import com.eabkystudios.atcrmod.entity.client.LostTravelerModel;
-import com.eabkystudios.atcrmod.entity.client.LostTravelerRenderer;
+import com.eabkystudios.atcrmod.entity.client.Deer.DeerModel;
+import com.eabkystudios.atcrmod.entity.client.Deer.DeerRenderer;
+import com.eabkystudios.atcrmod.entity.client.LostTraveler.LostTravelerModel;
+import com.eabkystudios.atcrmod.entity.client.LostTraveler.LostTravelerRenderer;
 import com.eabkystudios.atcrmod.keymapping.ATCRKeyMappings;
 import com.eabkystudios.atcrmod.menu.ATCRMenuTypes;
 import com.eabkystudios.atcrmod.menu.custom.PoweredFurnaceScreen;
@@ -45,16 +47,19 @@ public class AgainstTheCreepingRotClient {
     @SubscribeEvent
     static void onClientSetup(FMLClientSetupEvent event) {
         EntityRenderers.register(ATCREntities.LOST_TRAVELER.get(), LostTravelerRenderer::new);
+        EntityRenderers.register(ATCREntities.DEER.get(), DeerRenderer::new);
     }
 
     @SubscribeEvent
     public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(ATCRModelLayerLocations.LOST_TRAVELER, LostTravelerModel::createBodyLayer);
+        event.registerLayerDefinition(ATCRModelLayerLocations.DEER, DeerModel::createBodyLayer);
     }
 
     @SubscribeEvent
     public static void registerSpawnPlacements(RegisterSpawnPlacementsEvent event) {
         event.register(ATCREntities.LOST_TRAVELER.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.WORLD_SURFACE, Mob::checkMobSpawnRules, RegisterSpawnPlacementsEvent.Operation.OR);
+        event.register(ATCREntities.DEER.get(), SpawnPlacementTypes.ON_GROUND, Heightmap.Types.WORLD_SURFACE, Mob::checkMobSpawnRules, RegisterSpawnPlacementsEvent.Operation.OR);
     }
 
     @SubscribeEvent

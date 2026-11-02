@@ -1,6 +1,7 @@
-package com.eabkystudios.atcrmod.entity.client;
+package com.eabkystudios.atcrmod.entity.client.LostTraveler;
 
 import com.eabkystudios.atcrmod.AgainstTheCreepingRot;
+import com.eabkystudios.atcrmod.entity.client.ATCRModelLayerLocations;
 import com.eabkystudios.atcrmod.entity.custom.LostTravelerEntity;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;

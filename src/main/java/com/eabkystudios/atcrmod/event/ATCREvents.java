@@ -2,6 +2,7 @@ package com.eabkystudios.atcrmod.event;
 
 import com.eabkystudios.atcrmod.AgainstTheCreepingRot;
 import com.eabkystudios.atcrmod.entity.ATCREntities;
+import com.eabkystudios.atcrmod.entity.custom.DeerEntity;
 import com.eabkystudios.atcrmod.entity.custom.LostTravelerEntity;
 import com.eabkystudios.atcrmod.networking.ClientPayloadHandler;
 import com.eabkystudios.atcrmod.networking.packet.SummonEntityPacketC2S;
@@ -25,5 +26,6 @@ public class ATCREvents {
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(ATCREntities.LOST_TRAVELER.get(), LostTravelerEntity.createAttributes().build());
+        event.put(ATCREntities.DEER.get(), DeerEntity.createAttributes().build());
     }
 }

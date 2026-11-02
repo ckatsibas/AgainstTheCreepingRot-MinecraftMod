@@ -3,6 +3,7 @@ package com.eabkystudios.atcrmod.item;
 import com.eabkystudios.atcrmod.AgainstTheCreepingRot;
 import com.eabkystudios.atcrmod.entity.ATCREntities;
 import com.eabkystudios.atcrmod.food.ATCRFoods;
+import com.eabkystudios.atcrmod.item.custom.RingVitalityItem;
 import com.eabkystudios.atcrmod.item.custom.SilverSwordItem;
 import com.eabkystudios.atcrmod.item.custom.TravelerDaggerItem;
 import net.minecraft.world.item.Item;
@@ -37,8 +38,12 @@ public class ATCRItems {
     public static final  DeferredItem<Item> TRAVELER_DAGGER = ITEMS.registerItem("traveler_dagger", properties -> new TravelerDaggerItem(properties.sword(ToolMaterial.IRON, 0, -1.5f)));
     //public static final  DeferredItem<Item> TRAVELER_SHIELD = ITEMS.registerItem("traveler_shield", properties -> new ShieldItem(properties.));
 
+    /*CURIOS*/
+    public static final DeferredItem<Item> VITALITY_RING  = ITEMS.registerItem(ATCRCurios.VITALITY_RING.identifier().getPath(), RingVitalityItem::new, () -> new Item.Properties().stacksTo(1).durability(0));
+
     /*SPAWN EGGS*/
     public static final DeferredItem<Item> LOST_TRAVELER_SPAWN_EGG = ITEMS.registerItem("lost_traveler_spawn_egg", properties -> new SpawnEggItem(properties.spawnEgg(ATCREntities.LOST_TRAVELER.get())));
+    public static final DeferredItem<Item> DEER_SPAWN_EGG = ITEMS.registerItem("deer_spawn_egg", properties -> new SpawnEggItem(properties.spawnEgg(ATCREntities.DEER.get())));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

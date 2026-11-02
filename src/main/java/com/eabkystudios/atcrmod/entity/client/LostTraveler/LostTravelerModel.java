@@ -1,4 +1,4 @@
-package com.eabkystudios.atcrmod.entity.client;
+package com.eabkystudios.atcrmod.entity.client.LostTraveler;
 
 import net.minecraft.client.animation.KeyframeAnimation;
 import net.minecraft.client.model.EntityModel;

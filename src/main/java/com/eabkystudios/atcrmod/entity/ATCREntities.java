@@ -1,6 +1,7 @@
 package com.eabkystudios.atcrmod.entity;
 
 import com.eabkystudios.atcrmod.AgainstTheCreepingRot;
+import com.eabkystudios.atcrmod.entity.custom.DeerEntity;
 import com.eabkystudios.atcrmod.entity.custom.LostTravelerEntity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
@@ -16,7 +17,9 @@ public class ATCREntities {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.createEntities(AgainstTheCreepingRot.MODID);
 
     public static final ResourceKey<EntityType<?>> LOST_TRAVELER_KEY = ResourceKey.create(Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath(AgainstTheCreepingRot.MODID, "lost_traveler"));
+    public static final ResourceKey<EntityType<?>> DEER_KEY = ResourceKey.create(Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath(AgainstTheCreepingRot.MODID, "deer"));
     public static final Supplier<EntityType<LostTravelerEntity>> LOST_TRAVELER = ENTITY_TYPES.register("lost_traveler", ()-> EntityType.Builder.of(LostTravelerEntity::new, MobCategory.MONSTER).sized(1f, 2f).build(LOST_TRAVELER_KEY));
+    public static final Supplier<EntityType<DeerEntity>> DEER = ENTITY_TYPES.register("deer", ()-> EntityType.Builder.of(DeerEntity::new, MobCategory.AMBIENT).sized(1f, 2f).build(DEER_KEY));
 
     public static void register(IEventBus eventBus){
         ENTITY_TYPES.register(eventBus);

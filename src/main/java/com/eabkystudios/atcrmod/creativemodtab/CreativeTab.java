@@ -39,6 +39,8 @@ public class CreativeTab {
                         output.accept(ATCRBlocks.CLUSTER_OF_RED);
                         output.accept(ATCRItems.BATTERY_BASIC);
                         output.accept(ATCRItems.LOST_TRAVELER_SPAWN_EGG);
+                        output.accept(ATCRItems.DEER_SPAWN_EGG);
+                        output.accept(ATCRItems.VITALITY_RING);
                     })
                     .build());
 

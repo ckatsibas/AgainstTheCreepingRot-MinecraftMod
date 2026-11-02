@@ -34,7 +34,8 @@ public class ATCREntityLootTableProvider extends EntityLootSubProvider {
                         .add(LootItem.lootTableItem(ATCRItems.TRAVELER_SWORD).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1))))
                         .when(LootItemKilledByPlayerCondition.killedByPlayer())));
 
-        // add(ModEntities.NO_LOOTTABLE.get(), LootTable.lootTable());
+        //TODO: Deer dtops antlers, meat and maybe fur?
+        add(ATCREntities.DEER.get(), LootTable.lootTable());
     }
 
     @Override

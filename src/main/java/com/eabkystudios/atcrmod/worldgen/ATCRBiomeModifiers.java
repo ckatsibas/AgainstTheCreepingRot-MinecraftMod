@@ -26,7 +26,11 @@ public class ATCRBiomeModifiers {
     // PF is passed here.
     // Is a NeoForge class and places PFs into specific biomes.
 
+    /*ORES KEYS*/
     public static final ResourceKey<BiomeModifier> ADD_OVERWORLD_SILVER_ORE = registerKey("add_overworld_silver_ore");
+
+    /*CUSTOM FEATURES KEYS*/
+    public static final ResourceKey<BiomeModifier> ADD_RED_CLUSTER_SPIKES = registerKey("add_red_cluster_spikes");
 
     /*MONSTER SPAWNS KEYS*/
     public static final ResourceKey<BiomeModifier> SPAWN_LOST_TRAVELER = registerKey("spawn_lost_traveler");
@@ -35,13 +39,29 @@ public class ATCRBiomeModifiers {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
         HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
 
+        /*ORES MODIFIERS*/
         context.register(
                 ADD_OVERWORLD_SILVER_ORE,
                 new BiomeModifiers.AddFeaturesBiomeModifier(
                         biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
                         HolderSet.direct(placedFeatures.getOrThrow(ATCRPlacedFeatures.OVERWORLD_SILVER_ORE_PLACED_KEY)),
                         GenerationStep.Decoration.UNDERGROUND_ORES
-        ));
+                ));
+
+        /*CUSTOM FEATURES*/
+        context.register(
+                ADD_RED_CLUSTER_SPIKES,
+                new BiomeModifiers.AddFeaturesBiomeModifier(
+                        biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                        HolderSet.direct(
+                                placedFeatures.getOrThrow(
+                                        ATCRPlacedFeatures.RED_CLUSTER_SPIKE_PLACED_KEY
+                                )
+                        ),
+                        GenerationStep.Decoration.UNDERGROUND_DECORATION
+                )
+        );
+
 
         /*MONSTERS SPAWNS MODIFIERS*/
         context.register(

@@ -40,6 +40,8 @@ public class ATCRModelProvider extends ModelProvider {
         itemModels.generateFlatItem(ATCRItems.RED_SHARD.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ATCRItems.BATTERY_BASIC.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ATCRItems.LOST_TRAVELER_SPAWN_EGG.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ATCRItems.DEER_SPAWN_EGG.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ATCRItems.VITALITY_RING.get(), ModelTemplates.FLAT_ITEM);
 
         /*BLOCKS*/
         blockModels.createTrivialCube(ATCRBlocks.STEEL_BLOCK.get());

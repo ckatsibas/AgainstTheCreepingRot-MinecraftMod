@@ -42,7 +42,7 @@ public class LostTravelerEntity extends PathfinderMob {
 
     public static AttributeSupplier.Builder createAttributes(){
         return PathfinderMob.createLivingAttributes()
-                .add(Attributes.MAX_HEALTH, 10d)
+                .add(Attributes.MAX_HEALTH, 18d)
                 .add(Attributes.MOVEMENT_SPEED, 0.25d)
                 .add(Attributes.ATTACK_DAMAGE, 4d)
                 .add(Attributes.FOLLOW_RANGE, 24d);
