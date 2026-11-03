@@ -2,12 +2,11 @@ package com.eabkystudios.atcrmod.item;
 
 import com.eabkystudios.atcrmod.AgainstTheCreepingRot;
 import com.eabkystudios.atcrmod.entity.ATCREntities;
-import com.eabkystudios.atcrmod.food.ATCRFoods;
+import com.eabkystudios.atcrmod.item.food.ATCRFoods;
 import com.eabkystudios.atcrmod.item.custom.RingVitalityItem;
 import com.eabkystudios.atcrmod.item.custom.SilverSwordItem;
 import com.eabkystudios.atcrmod.item.custom.TravelerDaggerItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ShieldItem;
 import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.item.ToolMaterial;
 import net.neoforged.bus.api.IEventBus;
