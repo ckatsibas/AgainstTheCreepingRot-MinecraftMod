@@ -3,6 +3,7 @@ package com.eabkystudios.atcrmod;
 import com.eabkystudios.atcrmod.block.ATCRBlocks;
 import com.eabkystudios.atcrmod.block.entity.ATCRBlockEntities;
 import com.eabkystudios.atcrmod.creativemodtab.CreativeTab;
+import com.eabkystudios.atcrmod.data.ATCRDataComponents;
 import com.eabkystudios.atcrmod.datagen.ATCRCuriosProvider;
 import com.eabkystudios.atcrmod.effect.ATCREffects;
 import com.eabkystudios.atcrmod.entity.ATCREntities;
@@ -49,6 +50,7 @@ public class AgainstTheCreepingRot {
         ATCRMenuTypes.register(modEventBus);
         ATCREntities.register(modEventBus);
         ATCRFeatures.register(modEventBus);
+        ATCRDataComponents.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (AgainstTheCreepingRot) to respond directly to events.

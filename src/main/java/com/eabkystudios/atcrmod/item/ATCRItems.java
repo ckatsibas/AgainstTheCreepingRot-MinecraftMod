@@ -31,11 +31,16 @@ public class ATCRItems {
             properties -> new Item(properties.food(ATCRFoods.LOTUS_FLOWER, ATCRFoods.LOTUS_FLOWER_CONSUMABLE)));
 
     /*WEAPONS*/
-    public static final DeferredItem<Item> SILVER_SWORD = ITEMS.registerItem("silver_sword", properties -> new SilverSwordItem(properties.sword(ATCRToolTiers.SILVER, 3, -2f)));
-    public static final DeferredItem<Item> STEEL_SWORD = ITEMS.registerItem("steel_sword", properties -> new Item(properties.sword(ATCRToolTiers.STEEL, 3, -2.5f)));
-    public static final DeferredItem<Item> TRAVELER_SWORD = ITEMS.registerItem("traveler_sword", properties -> new Item(properties.sword(ToolMaterial.IRON, 2, -2.5f)));
+    public static final DeferredItem<Item> SILVER_SWORD = ITEMS.registerItem("silver_sword", properties -> new SilverSwordItem(properties.sword(ATCRToolTiers.SILVER, 3f, -2f)));
+    public static final DeferredItem<Item> STEEL_SWORD = ITEMS.registerItem("steel_sword", properties -> new Item(properties.sword(ATCRToolTiers.STEEL, 3f, -2.5f)));
+    public static final DeferredItem<Item> TRAVELER_SWORD = ITEMS.registerItem("traveler_sword", properties -> new Item(properties.sword(ToolMaterial.IRON, 2f, -2.5f)));
     public static final  DeferredItem<Item> TRAVELER_DAGGER = ITEMS.registerItem("traveler_dagger", properties -> new TravelerDaggerItem(properties.sword(ToolMaterial.IRON, 0, -1.5f)));
     //public static final  DeferredItem<Item> TRAVELER_SHIELD = ITEMS.registerItem("traveler_shield", properties -> new ShieldItem(properties.));
+
+    /*TOOLS*/
+    public static final DeferredItem<Item> STEEL_PICKAXE = ITEMS.registerItem("steel_pickaxe", properties -> new Item(properties.pickaxe(ATCRToolTiers.STEEL, 1f, -2.8f)));
+    public static final DeferredItem<Item> STEEL_AXE = ITEMS.registerItem("steel_axe", properties -> new Item(properties.axe(ATCRToolTiers.STEEL, 1f, -2.8f)));
+    public static final DeferredItem<Item> STEEL_SHOVEL = ITEMS.registerItem("steel_shovel", properties -> new Item(properties.shovel(ATCRToolTiers.STEEL, 1f, -2.8f)));
 
     /*CURIOS*/
     public static final DeferredItem<Item> VITALITY_RING  = ITEMS.registerItem(ATCRCurios.VITALITY_RING.identifier().getPath(), RingVitalityItem::new, () -> new Item.Properties().stacksTo(1).durability(0));

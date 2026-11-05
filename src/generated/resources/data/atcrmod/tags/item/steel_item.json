@@ -1,5 +1,9 @@
 {
   "values": [
-    "atcrmod:steel_ingot"
+    "atcrmod:steel_ingot",
+    "atcrmod:steel_sword",
+    "atcrmod:steel_pickaxe",
+    "atcrmod:steel_axe",
+    "atcrmod:steel_shovel"
   ]
 }

@@ -34,6 +34,9 @@ public class ATCRModelProvider extends ModelProvider {
         itemModels.generateFlatItem(ATCRItems.LEATHER_WRAPPED_HANDLE.get(), ModelTemplates.FLAT_ITEM);
         itemModels.declareCustomModelItem(ATCRItems.SILVER_SWORD.get());
         itemModels.declareCustomModelItem(ATCRItems.STEEL_SWORD.get());
+        itemModels.declareCustomModelItem(ATCRItems.STEEL_PICKAXE.get());
+        itemModels.declareCustomModelItem(ATCRItems.STEEL_AXE.get());
+        itemModels.declareCustomModelItem(ATCRItems.STEEL_SHOVEL.get());
         itemModels.declareCustomModelItem(ATCRItems.TRAVELER_SWORD.get());
         itemModels.declareCustomModelItem(ATCRItems.TRAVELER_DAGGER.get());
         // itemModels.declareCustomModelItem(ATCRItems.TRAVELER_SHIELD.get());
@@ -50,6 +53,7 @@ public class ATCRModelProvider extends ModelProvider {
         blockModels.createTrivialCube(ATCRBlocks.GRASSY_COBBLESTONE.get());
         createPoweredBlock(blockModels, ATCRBlocks.POWERED_FURNACE.get(), TexturedModel.ORIENTABLE, blockModels.modelOutput);
         blockModels.createTrivialCube(ATCRBlocks.CLUSTER_OF_RED.get());
+        blockModels.createTrivialCube(ATCRBlocks.DENSE_BLOCK_OF_RED.get());
     }
 
     /*METHODS*/

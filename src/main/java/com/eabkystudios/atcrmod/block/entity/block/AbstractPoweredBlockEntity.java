@@ -1,9 +1,13 @@
 package com.eabkystudios.atcrmod.block.entity.block;
 
 import com.eabkystudios.atcrmod.block.custom.AbstractPoweredBlock;
+import com.eabkystudios.atcrmod.block.resources.RedEnergy;
+import com.eabkystudios.atcrmod.data.ATCRDataComponents;
 import com.eabkystudios.atcrmod.item.ATCRItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.DataComponentGetter;
+import net.minecraft.core.component.DataComponentMap;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.chat.Component;
@@ -21,6 +25,7 @@ import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -39,15 +44,22 @@ public class AbstractPoweredBlockEntity extends BlockEntity implements MenuProvi
     private static final int INPUT_SLOT = 0;
     private static final int OUTPUT_SLOT = 1;
     protected final ContainerData dataAccess;
+    protected final RedEnergy energy;
     protected int progress = 0;
     protected int maxProgress = 72;
     private int litTimeRemaining;
     private int litTotalTime;
     private int cookingTimer;
     private int cookingTotalTime;
+    protected int capacity;
+    private int pendingEnergy;
 
-    public AbstractPoweredBlockEntity(BlockEntityType<?> type, BlockPos worldPosition, BlockState blockState) {
+
+    public AbstractPoweredBlockEntity(BlockEntityType<?> type, BlockPos worldPosition, BlockState blockState, int capacity, int receive, int extract) {
         super(type, worldPosition, blockState);
+
+        energy = new RedEnergy(capacity, receive, extract);
+        this.capacity = capacity;
         this.dataAccess = new ContainerData() {
             {
                 Objects.requireNonNull(AbstractPoweredBlockEntity.this);
@@ -104,22 +116,13 @@ public class AbstractPoweredBlockEntity extends BlockEntity implements MenuProvi
     }
 
     public void tick(Level level, BlockPos pos, BlockState state) {
-        if(hasRecipe() && isOutputSlotEmptyOrReceivable()) {
-            increaseCraftingProgress();
-            setChanged(level, pos, state);
-            level.setBlockAndUpdate(pos, state.setValue(AbstractPoweredBlock.LIT, true));
-
-            if(hasCraftingFinished()) {
-                craftItem();
-                resetProgress();
-            }
-        } else {
-            resetProgress();
-            level.setBlockAndUpdate(pos, state.setValue(AbstractPoweredBlock.LIT, false));
-        }
     }
 
-    private void craftItem() {
+    public void setEnergy(int amount) {
+        energy.set(Math.clamp(amount, 0, capacity));
+    }
+
+    public void craftItem() {
         Optional<RecipeHolder<SmeltingRecipe>> recipe = getCurrentRecipe();
         ItemStack output = recipe.get().value().assemble(new SingleRecipeInput(inventory.getResource(INPUT_SLOT).toStack()));
 
@@ -133,7 +136,7 @@ public class AbstractPoweredBlockEntity extends BlockEntity implements MenuProvi
         }
     }
 
-    private boolean hasRecipe() {
+    public boolean hasRecipe() {
         Optional<RecipeHolder<SmeltingRecipe>> recipe = getCurrentRecipe();
         if (recipe.isEmpty()){
             return false;
@@ -147,38 +150,60 @@ public class AbstractPoweredBlockEntity extends BlockEntity implements MenuProvi
         return outputSlotAmount && outputSlotItem;
     }
 
-    private Optional<RecipeHolder<SmeltingRecipe>> getCurrentRecipe() {
+    public Optional<RecipeHolder<SmeltingRecipe>> getCurrentRecipe() {
         return ((ServerLevel)level).recipeAccess().getRecipeFor(RecipeType.SMELTING, new SingleRecipeInput(inventory.getResource(INPUT_SLOT).toStack()), level);
     }
 
-    private boolean canInsertItemIntoOutputSlot(ItemStack output) {
+    public boolean canInsertItemIntoOutputSlot(ItemStack output) {
         return inventory.getResource(OUTPUT_SLOT).isEmpty() ||
                 inventory.getResource(OUTPUT_SLOT).is(output.getItem());
     }
 
-    private boolean canInsertAmountIntoOutputSlot(int count) {
+    public boolean canInsertAmountIntoOutputSlot(int count) {
         int maxCount = inventory.getResource(OUTPUT_SLOT).isEmpty() ? 64 : inventory.getResource(OUTPUT_SLOT).getMaxStackSize();
         int currentCount = inventory.getAmountAsInt(OUTPUT_SLOT);
 
         return maxCount >= currentCount + count;
     }
 
-    private boolean isOutputSlotEmptyOrReceivable() {
+    public boolean isOutputSlotEmptyOrReceivable() {
         return inventory.getResource(OUTPUT_SLOT).isEmpty() ||
                 inventory.getResource(OUTPUT_SLOT).test(stack -> stack.count() < stack.getMaxStackSize());
     }
 
-    private boolean hasCraftingFinished() {
+    public boolean hasCraftingFinished() {
         return progress >= maxProgress;
     }
 
-    private void increaseCraftingProgress() {
+    public void increaseCraftingProgress() {
         progress++;
     }
 
-    private void resetProgress() {
+    public void resetProgress() {
         progress = 0;
         maxProgress = 72;
+    }
+
+    @Override
+    protected void collectImplicitComponents(DataComponentMap.Builder components) {
+        super.collectImplicitComponents(components);
+        if (energy != null) {
+            components.set(ATCRDataComponents.ENERGY.get(), energy.getEnergyStored());
+        }
+    }
+
+    @Override
+    protected void applyImplicitComponents(DataComponentGetter components) {
+        super.applyImplicitComponents(components);
+        int amount = components.getOrDefault(ATCRDataComponents.ENERGY.get(), 0);
+            setEnergy(amount);
+    }
+
+    @SuppressWarnings("deprecation")
+    @Override
+    public void removeComponentsFromTag(ValueOutput output) {
+        super.removeComponentsFromTag(output);
+        output.discard("energy");
     }
 
     @Override
@@ -213,6 +238,7 @@ public class AbstractPoweredBlockEntity extends BlockEntity implements MenuProvi
         super.saveAdditional(output);
         output.putInt("powered_furnace.progress", progress);
         output.putInt("powered_furnace.max_progress", maxProgress);
+        output.putInt("energy", energy.getEnergyStored());
 
         output.putChild("inventory", inventory);
     }
@@ -222,6 +248,7 @@ public class AbstractPoweredBlockEntity extends BlockEntity implements MenuProvi
         super.loadAdditional(input);
         progress = input.getIntOr("powered_furnace.progress", 0);
         maxProgress = input.getIntOr("powered_furnace.max_progress", 0);
+        setEnergy(input.getIntOr("energy", 0));
 
         input.child("inventory").ifPresent(inventory::deserialize);
     }

@@ -31,12 +31,16 @@ public class CreativeTab {
                         output.accept(ATCRItems.LEATHER_WRAPPED_HANDLE);
                         output.accept(ATCRItems.SILVER_SWORD);
                         output.accept(ATCRItems.STEEL_SWORD);
+                        output.accept(ATCRItems.STEEL_PICKAXE);
+                        output.accept(ATCRItems.STEEL_AXE);
+                        output.accept(ATCRItems.STEEL_SHOVEL);
                         output.accept(ATCRBlocks.GRASSY_COBBLESTONE);
                         output.accept(ATCRBlocks.POWERED_FURNACE);
                         output.accept(ATCRItems.TRAVELER_SWORD);
                         output.accept(ATCRItems.TRAVELER_DAGGER);
                         output.accept(ATCRItems.RED_SHARD);
                         output.accept(ATCRBlocks.CLUSTER_OF_RED);
+                        output.accept(ATCRBlocks.DENSE_BLOCK_OF_RED);
                         output.accept(ATCRItems.BATTERY_BASIC);
                         output.accept(ATCRItems.LOST_TRAVELER_SPAWN_EGG);
                         output.accept(ATCRItems.DEER_SPAWN_EGG);

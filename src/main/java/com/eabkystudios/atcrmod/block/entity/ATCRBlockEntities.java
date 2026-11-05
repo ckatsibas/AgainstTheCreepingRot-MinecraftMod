@@ -2,6 +2,7 @@ package com.eabkystudios.atcrmod.block.entity;
 
 import com.eabkystudios.atcrmod.AgainstTheCreepingRot;
 import com.eabkystudios.atcrmod.block.ATCRBlocks;
+import com.eabkystudios.atcrmod.block.entity.block.DenseRedBlockEntity;
 import com.eabkystudios.atcrmod.block.entity.block.PoweredFurnaceEntity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -12,11 +13,12 @@ import java.util.function.Supplier;
 
 public class ATCRBlockEntities
 {
-    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_TYPES =
-            DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, AgainstTheCreepingRot.MODID);
+    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_TYPES = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, AgainstTheCreepingRot.MODID);
 
     public static final Supplier<BlockEntityType<PoweredFurnaceEntity>> POWERED_FURNACE_BE = BLOCK_ENTITY_TYPES.register(
             "powered_furnace_be", () -> new BlockEntityType<>(PoweredFurnaceEntity::new, ATCRBlocks.POWERED_FURNACE.get()));
+    public static final Supplier<BlockEntityType<DenseRedBlockEntity>> DENSE_BLOCK_OF_RED_BE = BLOCK_ENTITY_TYPES.register(
+            "dense_block_of_red_be", () -> new BlockEntityType<>(DenseRedBlockEntity::new, ATCRBlocks.DENSE_BLOCK_OF_RED.get()));
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITY_TYPES.register(eventBus);

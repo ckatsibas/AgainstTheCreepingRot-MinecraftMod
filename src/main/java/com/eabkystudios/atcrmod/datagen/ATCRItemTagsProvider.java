@@ -6,6 +6,7 @@ import com.eabkystudios.atcrmod.tags.ATCRTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.common.data.ItemTagsProvider;
 
 import java.util.concurrent.CompletableFuture;
@@ -18,7 +19,11 @@ public class ATCRItemTagsProvider extends ItemTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider registries) {
         tag(ATCRTags.Items.STEEL_ITEM)
-                .add(ATCRItems.STEEL_INGOT.get());
+                .add(ATCRItems.STEEL_INGOT.get())
+                .add(ATCRItems.STEEL_SWORD.get())
+                .add(ATCRItems.STEEL_PICKAXE.get())
+                .add(ATCRItems.STEEL_AXE.get())
+                .add(ATCRItems.STEEL_SHOVEL.get());
 
         tag(ATCRTags.Items.SILVER_ITEM)
                 .add(ATCRItems.RAW_SILVER.get())
@@ -29,11 +34,21 @@ public class ATCRItemTagsProvider extends ItemTagsProvider {
                 .add(ATCRItems.SILVER_SWORD.get());
 
         tag(ATCRTags.Items.STEEL_REPAIRABLE)
-                .add(ATCRItems.STEEL_SWORD.get());
+                .add(ATCRItems.STEEL_SWORD.get())
+                .add(ATCRItems.STEEL_PICKAXE.get());
 
         tag(ItemTags.SWORDS)
                 .add(ATCRItems.SILVER_SWORD.get())
                 .add(ATCRItems.STEEL_SWORD.get())
                 .add(ATCRItems.TRAVELER_SWORD.get());
+
+        tag(ItemTags.PICKAXES)
+                .add(ATCRItems.STEEL_PICKAXE.get());
+
+        tag(ItemTags.AXES)
+                .add(ATCRItems.STEEL_AXE.get());
+
+        tag(ItemTags.SHOVELS)
+                .add(ATCRItems.STEEL_SHOVEL.get());
     }
 }

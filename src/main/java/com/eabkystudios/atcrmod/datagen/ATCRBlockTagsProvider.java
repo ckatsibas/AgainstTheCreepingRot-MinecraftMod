@@ -23,12 +23,14 @@ public class ATCRBlockTagsProvider extends BlockTagsProvider {
                 .add(ATCRBlocks.STEEL_BLOCK.get())
                 .add(ATCRBlocks.GRASSY_COBBLESTONE.get())
                 .add(ATCRBlocks.POWERED_FURNACE.get())
-                .add(ATCRBlocks.CLUSTER_OF_RED.get());
+                .add(ATCRBlocks.CLUSTER_OF_RED.get())
+                .add(ATCRBlocks.DENSE_BLOCK_OF_RED.get());
 
         tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(ATCRBlocks.SILVER_ORE.get())
                 .add(ATCRBlocks.SILVER_DEEPSLATE_ORE.get())
                 .add(ATCRBlocks.STEEL_BLOCK.get())
-                .add(ATCRBlocks.CLUSTER_OF_RED.get());
+                .add(ATCRBlocks.CLUSTER_OF_RED.get())
+                .add(ATCRBlocks.DENSE_BLOCK_OF_RED.get());
     }
 }

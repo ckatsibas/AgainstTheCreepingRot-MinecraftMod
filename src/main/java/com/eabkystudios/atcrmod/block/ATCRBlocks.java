@@ -1,6 +1,7 @@
 package com.eabkystudios.atcrmod.block;
 
 import com.eabkystudios.atcrmod.AgainstTheCreepingRot;
+import com.eabkystudios.atcrmod.block.custom.DenseRedBlock;
 import com.eabkystudios.atcrmod.block.custom.PoweredFurnaceBlock;
 import com.eabkystudios.atcrmod.item.ATCRItems;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -33,6 +34,7 @@ public class ATCRBlocks {
     public static final DeferredBlock<Block> GRASSY_COBBLESTONE = registerBlock("grassy_cobblestone", properties -> new Block(properties.strength(2f,6f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> POWERED_FURNACE = registerBlock("powered_furnace", properties -> new PoweredFurnaceBlock(properties.strength(3.5f).requiresCorrectToolForDrops().lightLevel(litBlockEmission(10)).sound(SoundType.IRON)));
     public static final DeferredBlock<Block> CLUSTER_OF_RED = registerBlock("cluster_of_red", properties -> new DropExperienceBlock(UniformInt.of(2, 4),properties.strength(2f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST_CLUSTER)));
+    public static final DeferredBlock<Block> DENSE_BLOCK_OF_RED = registerBlock("dense_block_of_red", properties -> new DenseRedBlock(properties.strength(2f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST_CLUSTER)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Function<BlockBehaviour.Properties, T> function){
         DeferredBlock<T> toReturn = BLOCKS.registerBlock(name, function);

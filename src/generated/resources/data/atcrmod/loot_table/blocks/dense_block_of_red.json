@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "atcrmod:dense_block_of_red"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "atcrmod:blocks/dense_block_of_red"
+}
