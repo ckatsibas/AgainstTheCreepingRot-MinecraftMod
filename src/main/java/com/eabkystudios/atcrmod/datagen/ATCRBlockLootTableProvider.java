@@ -19,14 +19,31 @@ public class ATCRBlockLootTableProvider extends BlockLootSubProvider {
     protected void generate() {
         dropSelf(ATCRBlocks.STEEL_BLOCK.get());
         dropSelf(ATCRBlocks.GRASSY_COBBLESTONE.get());
+        dropSelf(ATCRBlocks.GRASSY_COBBLESTONE_STAIRS.get());
+        dropSelf(ATCRBlocks.GRASSY_COBBLESTONE_SLAB.get());
         dropSelf(ATCRBlocks.POWERED_FURNACE.get());
         dropSelf(ATCRBlocks.DENSE_BLOCK_OF_RED.get());
+
+        //TODO:should drop cobblestone when not mined with silk touch not stone
         dropSelf(ATCRBlocks.RUINED_STONE.get());
+        dropSelf(ATCRBlocks.RUINED_STONE_STAIRS.get());
+        dropSelf(ATCRBlocks.RUINED_STONE_SLAB.get());
+
         dropSelf(ATCRBlocks.RUINED_COBBLESTONE.get());
+        dropSelf(ATCRBlocks.RUINED_COBBLESTONE_STAIRS.get());
+        dropSelf(ATCRBlocks.RUINED_COBBLESTONE_SLAB.get());
         dropSelf(ATCRBlocks.RUINED_MOSSY_COBBLESTONE.get());
+        dropSelf(ATCRBlocks.RUINED_MOSSY_COBBLESTONE_STAIRS.get());
+        dropSelf(ATCRBlocks.RUINED_MOSSY_COBBLESTONE_SLAB.get());
         dropSelf(ATCRBlocks.RUINED_STONE_BRICKS.get());
+        dropSelf(ATCRBlocks.RUINED_STONE_BRICKS_STAIRS.get());
+        dropSelf(ATCRBlocks.RUINED_STONE_BRICKS_SLAB.get());
         dropSelf(ATCRBlocks.RUINED_MOSSY_STONE_BRICKS.get());
+        dropSelf(ATCRBlocks.RUINED_MOSSY_STONE_BRICKS_STAIRS.get());
+        dropSelf(ATCRBlocks.RUINED_MOSSY_STONE_BRICKS_SLAB.get());
         dropSelf(ATCRBlocks.RUINED_CRACKED_STONE_BRICKS.get());
+        dropSelf(ATCRBlocks.RUINED_CRACKED_STONE_BRICKS_STAIRS.get());
+        dropSelf(ATCRBlocks.RUINED_CRACKED_STONE_BRICKS_SLAB.get());
         dropSelf(ATCRBlocks.RUINED_CHISELED_STONE_BRICKS.get());
 
         add(ATCRBlocks.SILVER_ORE.get(), createOreDrop(ATCRBlocks.SILVER_ORE.get(), ATCRItems.RAW_SILVER.get()));

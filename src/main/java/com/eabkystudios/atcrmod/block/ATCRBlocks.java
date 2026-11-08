@@ -7,10 +7,7 @@ import com.eabkystudios.atcrmod.block.custom.PoweredFurnaceBlock;
 import com.eabkystudios.atcrmod.item.ATCRItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.DropExperienceBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -43,6 +40,20 @@ public class ATCRBlocks {
     public static final DeferredBlock<Block> RUINED_MOSSY_STONE_BRICKS = registerBlock("ruined_mossy_stone_bricks", properties -> new Block(properties.requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
     public static final DeferredBlock<Block> RUINED_CRACKED_STONE_BRICKS = registerBlock("ruined_cracked_stone_bricks", properties -> new Block(properties.requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
     public static final DeferredBlock<Block> RUINED_CHISELED_STONE_BRICKS = registerBlock("ruined_chiseled_stone_bricks", properties -> new Block(properties.requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> RUINED_STONE_STAIRS = registerBlock("ruined_stone_stairs", properties -> new StairBlock(ATCRBlocks.RUINED_STONE.get().defaultBlockState(), properties.requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> RUINED_COBBLESTONE_STAIRS = registerBlock("ruined_cobblestone_stairs", properties -> new StairBlock(ATCRBlocks.RUINED_COBBLESTONE.get().defaultBlockState(), properties.requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> RUINED_MOSSY_COBBLESTONE_STAIRS = registerBlock("ruined_mossy_cobblestone_stairs", properties -> new StairBlock(ATCRBlocks.RUINED_MOSSY_COBBLESTONE.get().defaultBlockState(), properties.requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> RUINED_STONE_BRICKS_STAIRS = registerBlock("ruined_stone_bricks_stairs", properties -> new StairBlock(ATCRBlocks.RUINED_STONE_BRICKS.get().defaultBlockState(), properties.requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> RUINED_MOSSY_STONE_BRICKS_STAIRS = registerBlock("ruined_mossy_stone_bricks_stairs", properties -> new StairBlock(ATCRBlocks.RUINED_MOSSY_STONE_BRICKS.get().defaultBlockState(), properties.requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> RUINED_CRACKED_STONE_BRICKS_STAIRS = registerBlock("ruined_cracked_stone_bricks_stairs", properties -> new StairBlock(ATCRBlocks.RUINED_CRACKED_STONE_BRICKS.get().defaultBlockState(), properties.requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> RUINED_STONE_SLAB = registerBlock("ruined_stone_slab", properties -> new SlabBlock(properties.requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> RUINED_COBBLESTONE_SLAB = registerBlock("ruined_cobblestone_slab", properties -> new SlabBlock(properties.requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> RUINED_MOSSY_COBBLESTONE_SLAB = registerBlock("ruined_mossy_cobblestone_slab", properties -> new SlabBlock(properties.requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> RUINED_STONE_BRICKS_SLAB = registerBlock("ruined_stone_bricks_slab", properties -> new SlabBlock(properties.requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> RUINED_MOSSY_STONE_BRICKS_SLAB = registerBlock("ruined_mossy_stone_bricks_slab", properties -> new SlabBlock(properties.requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> RUINED_CRACKED_STONE_BRICKS_SLAB = registerBlock("ruined_cracked_stone_bricks_slab", properties -> new SlabBlock(properties.requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> GRASSY_COBBLESTONE_STAIRS = registerBlock("grassy_cobblestone_stairs", properties -> new StairBlock(ATCRBlocks.GRASSY_COBBLESTONE.get().defaultBlockState(), properties.strength(2f,6f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> GRASSY_COBBLESTONE_SLAB = registerBlock("grassy_cobblestone_slab", properties -> new SlabBlock(properties.strength(2f,6f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Function<BlockBehaviour.Properties, T> function){
         DeferredBlock<T> toReturn = BLOCKS.registerBlock(name, function);

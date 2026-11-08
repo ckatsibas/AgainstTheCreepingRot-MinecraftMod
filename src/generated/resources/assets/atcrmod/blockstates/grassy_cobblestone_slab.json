@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "atcrmod:block/grassy_cobblestone_slab"
+    },
+    "type=double": {
+      "model": "atcrmod:block/grassy_cobblestone"
+    },
+    "type=top": {
+      "model": "atcrmod:block/grassy_cobblestone_slab_top"
+    }
+  }
+}

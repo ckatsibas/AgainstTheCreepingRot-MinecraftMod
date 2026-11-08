@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "atcrmod:block/ruined_stone_bricks",
+    "side": "atcrmod:block/ruined_stone_bricks",
+    "top": "atcrmod:block/ruined_stone_bricks"
+  }
+}

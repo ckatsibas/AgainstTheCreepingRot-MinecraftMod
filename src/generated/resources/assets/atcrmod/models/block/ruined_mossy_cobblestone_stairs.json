@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "atcrmod:block/ruined_mossy_cobblestone",
+    "side": "atcrmod:block/ruined_mossy_cobblestone",
+    "top": "atcrmod:block/ruined_mossy_cobblestone"
+  }
+}

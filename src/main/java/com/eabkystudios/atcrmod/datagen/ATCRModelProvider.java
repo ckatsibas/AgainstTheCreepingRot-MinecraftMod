@@ -52,16 +52,16 @@ public class ATCRModelProvider extends ModelProvider {
         blockModels.createTrivialCube(ATCRBlocks.STEEL_BLOCK.get());
         blockModels.createTrivialCube(ATCRBlocks.SILVER_ORE.get());
         blockModels.createTrivialCube(ATCRBlocks.SILVER_DEEPSLATE_ORE.get());
-        blockModels.createTrivialCube(ATCRBlocks.GRASSY_COBBLESTONE.get());
+        blockModels.family(ATCRBlocks.GRASSY_COBBLESTONE.get()).stairs(ATCRBlocks.GRASSY_COBBLESTONE_STAIRS.get()).slab(ATCRBlocks.GRASSY_COBBLESTONE_SLAB.get());
         createPoweredBlock(blockModels, ATCRBlocks.POWERED_FURNACE.get(), TexturedModel.ORIENTABLE, blockModels.modelOutput);
         blockModels.createTrivialCube(ATCRBlocks.CLUSTER_OF_RED.get());
         blockModels.createTrivialCube(ATCRBlocks.DENSE_BLOCK_OF_RED.get());
-        blockModels.createTrivialCube(ATCRBlocks.RUINED_STONE.get());
-        blockModels.createTrivialCube(ATCRBlocks.RUINED_COBBLESTONE.get());
-        blockModels.createTrivialCube(ATCRBlocks.RUINED_MOSSY_COBBLESTONE.get());
-        blockModels.createTrivialCube(ATCRBlocks.RUINED_STONE_BRICKS.get());
-        blockModels.createTrivialCube(ATCRBlocks.RUINED_MOSSY_STONE_BRICKS.get());
-        blockModels.createTrivialCube(ATCRBlocks.RUINED_CRACKED_STONE_BRICKS.get());
+        blockModels.family(ATCRBlocks.RUINED_STONE.get()).stairs(ATCRBlocks.RUINED_STONE_STAIRS.get()).slab(ATCRBlocks.RUINED_STONE_SLAB.get());
+        blockModels.family(ATCRBlocks.RUINED_COBBLESTONE.get()).stairs(ATCRBlocks.RUINED_COBBLESTONE_STAIRS.get()).slab(ATCRBlocks.RUINED_COBBLESTONE_SLAB.get());
+        blockModels.family(ATCRBlocks.RUINED_MOSSY_COBBLESTONE.get()).stairs(ATCRBlocks.RUINED_MOSSY_COBBLESTONE_STAIRS.get()).slab(ATCRBlocks.RUINED_MOSSY_COBBLESTONE_SLAB.get());
+        blockModels.family(ATCRBlocks.RUINED_STONE_BRICKS.get()).stairs(ATCRBlocks.RUINED_STONE_BRICKS_STAIRS.get()).slab(ATCRBlocks.RUINED_STONE_BRICKS_SLAB.get());
+        blockModels.family(ATCRBlocks.RUINED_MOSSY_STONE_BRICKS.get()).stairs(ATCRBlocks.RUINED_MOSSY_STONE_BRICKS_STAIRS.get()).slab(ATCRBlocks.RUINED_MOSSY_STONE_BRICKS_SLAB.get());
+        blockModels.family(ATCRBlocks.RUINED_CRACKED_STONE_BRICKS.get()).stairs(ATCRBlocks.RUINED_CRACKED_STONE_BRICKS_STAIRS.get()).slab(ATCRBlocks.RUINED_CRACKED_STONE_BRICKS_SLAB.get());
         blockModels.createTrivialCube(ATCRBlocks.RUINED_CHISELED_STONE_BRICKS.get());
     }
 

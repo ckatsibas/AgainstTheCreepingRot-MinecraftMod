@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "atcrmod:block/ruined_stone_slab"
+    },
+    "type=double": {
+      "model": "atcrmod:block/ruined_stone"
+    },
+    "type=top": {
+      "model": "atcrmod:block/ruined_stone_slab_top"
+    }
+  }
+}

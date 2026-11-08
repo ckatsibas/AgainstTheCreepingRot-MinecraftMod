@@ -35,6 +35,8 @@ public class CreativeTab {
                         output.accept(ATCRItems.STEEL_AXE);
                         output.accept(ATCRItems.STEEL_SHOVEL);
                         output.accept(ATCRBlocks.GRASSY_COBBLESTONE);
+                        output.accept(ATCRBlocks.GRASSY_COBBLESTONE_STAIRS);
+                        output.accept(ATCRBlocks.GRASSY_COBBLESTONE_SLAB);
                         output.accept(ATCRBlocks.POWERED_FURNACE);
                         output.accept(ATCRItems.TRAVELER_SWORD);
                         output.accept(ATCRItems.TRAVELER_DAGGER);
@@ -48,11 +50,23 @@ public class CreativeTab {
                         output.accept(ATCRItems.GOLD_RING);
                         output.accept(ATCRItems.AMULET_OF_THE_DEATHLESS);
                         output.accept(ATCRBlocks.RUINED_STONE);
+                        output.accept(ATCRBlocks.RUINED_STONE_STAIRS);
+                        output.accept(ATCRBlocks.RUINED_STONE_SLAB);
                         output.accept((ATCRBlocks.RUINED_COBBLESTONE));
+                        output.accept((ATCRBlocks.RUINED_COBBLESTONE_STAIRS));
+                        output.accept((ATCRBlocks.RUINED_COBBLESTONE_SLAB));
                         output.accept((ATCRBlocks.RUINED_MOSSY_COBBLESTONE));
+                        output.accept((ATCRBlocks.RUINED_MOSSY_COBBLESTONE_STAIRS));
+                        output.accept((ATCRBlocks.RUINED_MOSSY_COBBLESTONE_SLAB));
                         output.accept((ATCRBlocks.RUINED_STONE_BRICKS));
+                        output.accept((ATCRBlocks.RUINED_STONE_BRICKS_STAIRS));
+                        output.accept((ATCRBlocks.RUINED_STONE_BRICKS_SLAB));
                         output.accept((ATCRBlocks.RUINED_MOSSY_STONE_BRICKS));
+                        output.accept((ATCRBlocks.RUINED_MOSSY_STONE_BRICKS_STAIRS));
+                        output.accept((ATCRBlocks.RUINED_MOSSY_STONE_BRICKS_SLAB));
                         output.accept((ATCRBlocks.RUINED_CRACKED_STONE_BRICKS));
+                        output.accept((ATCRBlocks.RUINED_CRACKED_STONE_BRICKS_STAIRS));
+                        output.accept((ATCRBlocks.RUINED_CRACKED_STONE_BRICKS_SLAB));
                         output.accept((ATCRBlocks.RUINED_CHISELED_STONE_BRICKS));
                     })
                     .build());
