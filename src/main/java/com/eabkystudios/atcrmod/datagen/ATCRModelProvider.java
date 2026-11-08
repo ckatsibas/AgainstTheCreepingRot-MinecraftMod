@@ -45,6 +45,8 @@ public class ATCRModelProvider extends ModelProvider {
         itemModels.generateFlatItem(ATCRItems.LOST_TRAVELER_SPAWN_EGG.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ATCRItems.DEER_SPAWN_EGG.get(), ModelTemplates.FLAT_ITEM);
         itemModels.generateFlatItem(ATCRItems.VITALITY_RING.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ATCRItems.GOLD_RING.get(), ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ATCRItems.AMULET_OF_THE_DEATHLESS.get(), ModelTemplates.FLAT_ITEM);
 
         /*BLOCKS*/
         blockModels.createTrivialCube(ATCRBlocks.STEEL_BLOCK.get());
@@ -54,6 +56,13 @@ public class ATCRModelProvider extends ModelProvider {
         createPoweredBlock(blockModels, ATCRBlocks.POWERED_FURNACE.get(), TexturedModel.ORIENTABLE, blockModels.modelOutput);
         blockModels.createTrivialCube(ATCRBlocks.CLUSTER_OF_RED.get());
         blockModels.createTrivialCube(ATCRBlocks.DENSE_BLOCK_OF_RED.get());
+        blockModels.createTrivialCube(ATCRBlocks.RUINED_STONE.get());
+        blockModels.createTrivialCube(ATCRBlocks.RUINED_COBBLESTONE.get());
+        blockModels.createTrivialCube(ATCRBlocks.RUINED_MOSSY_COBBLESTONE.get());
+        blockModels.createTrivialCube(ATCRBlocks.RUINED_STONE_BRICKS.get());
+        blockModels.createTrivialCube(ATCRBlocks.RUINED_MOSSY_STONE_BRICKS.get());
+        blockModels.createTrivialCube(ATCRBlocks.RUINED_CRACKED_STONE_BRICKS.get());
+        blockModels.createTrivialCube(ATCRBlocks.RUINED_CHISELED_STONE_BRICKS.get());
     }
 
     /*METHODS*/

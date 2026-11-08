@@ -45,6 +45,15 @@ public class CreativeTab {
                         output.accept(ATCRItems.LOST_TRAVELER_SPAWN_EGG);
                         output.accept(ATCRItems.DEER_SPAWN_EGG);
                         output.accept(ATCRItems.VITALITY_RING);
+                        output.accept(ATCRItems.GOLD_RING);
+                        output.accept(ATCRItems.AMULET_OF_THE_DEATHLESS);
+                        output.accept(ATCRBlocks.RUINED_STONE);
+                        output.accept((ATCRBlocks.RUINED_COBBLESTONE));
+                        output.accept((ATCRBlocks.RUINED_MOSSY_COBBLESTONE));
+                        output.accept((ATCRBlocks.RUINED_STONE_BRICKS));
+                        output.accept((ATCRBlocks.RUINED_MOSSY_STONE_BRICKS));
+                        output.accept((ATCRBlocks.RUINED_CRACKED_STONE_BRICKS));
+                        output.accept((ATCRBlocks.RUINED_CHISELED_STONE_BRICKS));
                     })
                     .build());
 

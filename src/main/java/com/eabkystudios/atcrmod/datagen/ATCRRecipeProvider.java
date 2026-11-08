@@ -73,6 +73,25 @@ public class ATCRRecipeProvider extends RecipeProvider {
                 .group("misc")
                 .save(output);
 
+        shaped(RecipeCategory.COMBAT, ATCRItems.VITALITY_RING.get())
+                .pattern("BA")
+                .pattern("AC")
+                .define('A', ATCRItems.RED_SHARD.get())
+                .define('B', Items.NETHER_STAR)
+                .define('C', ATCRItems.GOLD_RING.get())
+                .unlockedBy(getHasName(ATCRItems.GOLD_RING.get()), has(ATCRItems.GOLD_RING))
+                .group("rings")
+                .save(output);
+
+        shaped(RecipeCategory.MISC, ATCRItems.GOLD_RING.get())
+                .pattern(" A ")
+                .pattern("A A")
+                .pattern(" A ")
+                .define('A', Items.GOLD_INGOT)
+                .unlockedBy(getHasName(Items.GOLD_INGOT), has(Items.GOLD_INGOT))
+                .group("gold")
+                .save(output);
+
         /*SILVER*/
         shaped(RecipeCategory.TOOLS, ATCRItems.SILVER_SWORD.get())
                 .pattern("A")

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "rings",
+  "key": {
+    "A": "atcrmod:red_shard",
+    "B": "minecraft:nether_star",
+    "C": "atcrmod:gold_ring"
+  },
+  "pattern": [
+    "BA",
+    "AC"
+  ],
+  "result": {
+    "id": "atcrmod:ring_of_vitality"
+  }
+}

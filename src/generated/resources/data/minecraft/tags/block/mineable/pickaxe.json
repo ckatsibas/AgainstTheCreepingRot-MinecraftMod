@@ -6,6 +6,13 @@
     "atcrmod:grassy_cobblestone",
     "atcrmod:powered_furnace",
     "atcrmod:cluster_of_red",
-    "atcrmod:dense_block_of_red"
+    "atcrmod:dense_block_of_red",
+    "atcrmod:ruined_stone",
+    "atcrmod:ruined_cobblestone",
+    "atcrmod:ruined_mossy_cobblestone",
+    "atcrmod:ruined_stone_bricks",
+    "atcrmod:ruined_mossy_stone_bricks",
+    "atcrmod:ruined_cracked_stone_bricks",
+    "atcrmod:ruined_chiseled_stone_bricks"
   ]
 }

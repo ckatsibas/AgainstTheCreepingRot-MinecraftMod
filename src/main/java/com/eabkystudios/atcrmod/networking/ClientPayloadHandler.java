@@ -12,4 +12,8 @@ public class ClientPayloadHandler {
     public static void handleSummonEntityPacket(SummonEntityPacketC2S summonEntityPacketC2S, IPayloadContext context) {
         summonEntityPacketC2S.entity().spawn((ServerLevel) context.player().level(), summonEntityPacketC2S.pos(), EntitySpawnReason.TRIGGERED);
     }
+
+    public static void handleSummonTreePacket(){
+
+    }
 }

@@ -24,7 +24,14 @@ public class ATCRBlockTagsProvider extends BlockTagsProvider {
                 .add(ATCRBlocks.GRASSY_COBBLESTONE.get())
                 .add(ATCRBlocks.POWERED_FURNACE.get())
                 .add(ATCRBlocks.CLUSTER_OF_RED.get())
-                .add(ATCRBlocks.DENSE_BLOCK_OF_RED.get());
+                .add(ATCRBlocks.DENSE_BLOCK_OF_RED.get())
+                .add(ATCRBlocks.RUINED_STONE.get())
+                .add(ATCRBlocks.RUINED_COBBLESTONE.get())
+                .add(ATCRBlocks.RUINED_MOSSY_COBBLESTONE.get())
+                .add(ATCRBlocks.RUINED_STONE_BRICKS.get())
+                .add(ATCRBlocks.RUINED_MOSSY_STONE_BRICKS.get())
+                .add(ATCRBlocks.RUINED_CRACKED_STONE_BRICKS.get())
+                .add(ATCRBlocks.RUINED_CHISELED_STONE_BRICKS.get());
 
         tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(ATCRBlocks.SILVER_ORE.get())

@@ -1,6 +1,7 @@
 package com.eabkystudios.atcrmod.block;
 
 import com.eabkystudios.atcrmod.AgainstTheCreepingRot;
+import com.eabkystudios.atcrmod.block.custom.ClusterOfRedBlock;
 import com.eabkystudios.atcrmod.block.custom.DenseRedBlock;
 import com.eabkystudios.atcrmod.block.custom.PoweredFurnaceBlock;
 import com.eabkystudios.atcrmod.item.ATCRItems;
@@ -33,8 +34,15 @@ public class ATCRBlocks {
     public static final DeferredBlock<Block> SILVER_DEEPSLATE_ORE = registerBlock("deepslate_silver_ore", properties -> new DropExperienceBlock(UniformInt.of(4,6),properties.strength(5f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
     public static final DeferredBlock<Block> GRASSY_COBBLESTONE = registerBlock("grassy_cobblestone", properties -> new Block(properties.strength(2f,6f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> POWERED_FURNACE = registerBlock("powered_furnace", properties -> new PoweredFurnaceBlock(properties.strength(3.5f).requiresCorrectToolForDrops().lightLevel(litBlockEmission(10)).sound(SoundType.IRON)));
-    public static final DeferredBlock<Block> CLUSTER_OF_RED = registerBlock("cluster_of_red", properties -> new DropExperienceBlock(UniformInt.of(2, 4),properties.strength(2f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST_CLUSTER)));
+    public static final DeferredBlock<Block> CLUSTER_OF_RED = registerBlock("cluster_of_red", properties -> new ClusterOfRedBlock(UniformInt.of(2, 4),properties.strength(2f).requiresCorrectToolForDrops().lightLevel(litBlockEmission(8)).sound(SoundType.AMETHYST_CLUSTER)));
     public static final DeferredBlock<Block> DENSE_BLOCK_OF_RED = registerBlock("dense_block_of_red", properties -> new DenseRedBlock(properties.strength(2f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST_CLUSTER)));
+    public static final DeferredBlock<Block> RUINED_STONE = registerBlock("ruined_stone", properties -> new Block(properties.requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> RUINED_COBBLESTONE = registerBlock("ruined_cobblestone", properties -> new Block(properties.requiresCorrectToolForDrops().strength(2.0F, 6.0F).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> RUINED_MOSSY_COBBLESTONE = registerBlock("ruined_mossy_cobblestone", properties -> new Block(properties.requiresCorrectToolForDrops().strength(2.0F, 6.0F).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> RUINED_STONE_BRICKS = registerBlock("ruined_stone_bricks", properties -> new Block(properties.requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> RUINED_MOSSY_STONE_BRICKS = registerBlock("ruined_mossy_stone_bricks", properties -> new Block(properties.requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> RUINED_CRACKED_STONE_BRICKS = registerBlock("ruined_cracked_stone_bricks", properties -> new Block(properties.requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> RUINED_CHISELED_STONE_BRICKS = registerBlock("ruined_chiseled_stone_bricks", properties -> new Block(properties.requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Function<BlockBehaviour.Properties, T> function){
         DeferredBlock<T> toReturn = BLOCKS.registerBlock(name, function);

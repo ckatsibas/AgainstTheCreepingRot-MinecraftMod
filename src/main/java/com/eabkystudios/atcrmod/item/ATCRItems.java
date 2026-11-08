@@ -2,13 +2,14 @@ package com.eabkystudios.atcrmod.item;
 
 import com.eabkystudios.atcrmod.AgainstTheCreepingRot;
 import com.eabkystudios.atcrmod.entity.ATCREntities;
+import com.eabkystudios.atcrmod.item.custom.*;
 import com.eabkystudios.atcrmod.item.food.ATCRFoods;
-import com.eabkystudios.atcrmod.item.custom.RingVitalityItem;
-import com.eabkystudios.atcrmod.item.custom.SilverSwordItem;
-import com.eabkystudios.atcrmod.item.custom.TravelerDaggerItem;
+import net.minecraft.core.component.DataComponentType;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SpawnEggItem;
 import net.minecraft.world.item.ToolMaterial;
+import net.minecraft.world.item.component.DeathProtection;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -44,6 +45,8 @@ public class ATCRItems {
 
     /*CURIOS*/
     public static final DeferredItem<Item> VITALITY_RING  = ITEMS.registerItem(ATCRCurios.VITALITY_RING.identifier().getPath(), RingVitalityItem::new, () -> new Item.Properties().stacksTo(1).durability(0));
+    public static final DeferredItem<Item> GOLD_RING  = ITEMS.registerItem(ATCRCurios.GOLD_RING.identifier().getPath(), GoldRingItem::new, () -> new Item.Properties().stacksTo(1).durability(0));
+    public static final DeferredItem<Item> AMULET_OF_THE_DEATHLESS  = ITEMS.registerItem(ATCRCurios.AMULET_OF_THE_DEATHLESS.identifier().getPath(), AmuletOfTheDeathlessItem::new, () -> new Item.Properties().stacksTo(1).durability(0).component(DataComponents.DEATH_PROTECTION, DeathProtection.TOTEM_OF_UNDYING));
 
     /*SPAWN EGGS*/
     public static final DeferredItem<Item> LOST_TRAVELER_SPAWN_EGG = ITEMS.registerItem("lost_traveler_spawn_egg", properties -> new SpawnEggItem(properties.spawnEgg(ATCREntities.LOST_TRAVELER.get())));

@@ -16,6 +16,9 @@ public class ATCRCuriosProvider extends CuriosDataProvider {
     @Override
     public void generate(HolderLookup.Provider registries) {
         this.tag(CuriosTags.RING).add(ATCRItems.VITALITY_RING.get());
+        this.tag(CuriosTags.RING).add(ATCRItems.GOLD_RING.get());
+
+        this.tag(CuriosTags.NECKLACE).add(ATCRItems.AMULET_OF_THE_DEATHLESS.get());
 
 
         this.createEntities("player")
