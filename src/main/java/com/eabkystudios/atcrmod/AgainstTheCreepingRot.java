@@ -10,6 +10,8 @@ import com.eabkystudios.atcrmod.entity.ATCREntities;
 import com.eabkystudios.atcrmod.item.ATCRItems;
 import com.eabkystudios.atcrmod.menu.ATCRMenuTypes;
 import com.eabkystudios.atcrmod.worldgen.ATCRFeatures;
+import com.eabkystudios.atcrmod.worldgen.structures.ATCRStructurePlacements;
+import com.eabkystudios.atcrmod.worldgen.structures.ATCRStructures;
 import net.minecraft.data.DataGenerator;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import org.slf4j.Logger;
@@ -51,6 +53,8 @@ public class AgainstTheCreepingRot {
         ATCREntities.register(modEventBus);
         ATCRFeatures.register(modEventBus);
         ATCRDataComponents.register(modEventBus);
+        ATCRStructures.register(modEventBus);
+        ATCRStructurePlacements.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (AgainstTheCreepingRot) to respond directly to events.

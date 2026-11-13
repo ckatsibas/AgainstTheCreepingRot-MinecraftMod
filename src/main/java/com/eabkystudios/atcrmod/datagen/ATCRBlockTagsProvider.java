@@ -45,7 +45,14 @@ public class ATCRBlockTagsProvider extends BlockTagsProvider {
                 .add(ATCRBlocks.RUINED_CRACKED_STONE_BRICKS.get())
                 .add(ATCRBlocks.RUINED_CRACKED_STONE_BRICKS_STAIRS.get())
                 .add(ATCRBlocks.RUINED_CRACKED_STONE_BRICKS_SLAB.get())
-                .add(ATCRBlocks.RUINED_CHISELED_STONE_BRICKS.get());
+                .add(ATCRBlocks.RUINED_CHISELED_STONE_BRICKS.get())
+                .add(ATCRBlocks.RUINED_STONE_WALL.get())
+                .add(ATCRBlocks.RUINED_COBBLESTONE_WALL.get())
+                .add(ATCRBlocks.RUINED_STONE_BRICKS_WALL.get())
+                .add(ATCRBlocks.RUINED_MOSSY_COBBLESTONE_WALL.get())
+                .add(ATCRBlocks.RUINED_MOSSY_STONE_BRICKS_WALL.get())
+                .add(ATCRBlocks.RUINED_CRACKED_STONE_BRICKS_WALL.get())
+                .add(ATCRBlocks.GRASSY_COBBLESTONE_WALL.get());
 
         tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(ATCRBlocks.SILVER_ORE.get())
@@ -71,6 +78,12 @@ public class ATCRBlockTagsProvider extends BlockTagsProvider {
                 .add(ATCRBlocks.RUINED_CRACKED_STONE_BRICKS.get())
                 .add(ATCRBlocks.RUINED_CRACKED_STONE_BRICKS_STAIRS.get())
                 .add(ATCRBlocks.RUINED_CRACKED_STONE_BRICKS_SLAB.get())
-                .add(ATCRBlocks.RUINED_CHISELED_STONE_BRICKS.get());
+                .add(ATCRBlocks.RUINED_CHISELED_STONE_BRICKS.get())
+                .add(ATCRBlocks.RUINED_STONE_WALL.get())
+                .add(ATCRBlocks.RUINED_COBBLESTONE_WALL.get())
+                .add(ATCRBlocks.RUINED_STONE_BRICKS_WALL.get())
+                .add(ATCRBlocks.RUINED_MOSSY_COBBLESTONE_WALL.get())
+                .add(ATCRBlocks.RUINED_MOSSY_STONE_BRICKS_WALL.get())
+                .add(ATCRBlocks.RUINED_CRACKED_STONE_BRICKS_WALL.get());
     }
 }

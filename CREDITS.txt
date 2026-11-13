@@ -12,3 +12,4 @@ The textures for grassy cobblestone are form https://github.com/Futureazoo/Textu
 
 CODE:
 Code for some energy functionality from https://github.com/McJty/Tutorial_26.2_neoforge/tree/main - License: MIT
+Code for most of the structure functionality based on / from https://github.com/TelepathicGrunt/StructureTutorialMod/tree/1.21.11-Neoforge-Jigsaw?tab=MIT-1-ov-file - License: MIT

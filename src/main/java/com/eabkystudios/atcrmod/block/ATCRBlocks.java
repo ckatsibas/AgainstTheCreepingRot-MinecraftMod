@@ -54,6 +54,13 @@ public class ATCRBlocks {
     public static final DeferredBlock<Block> RUINED_CRACKED_STONE_BRICKS_SLAB = registerBlock("ruined_cracked_stone_bricks_slab", properties -> new SlabBlock(properties.requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
     public static final DeferredBlock<Block> GRASSY_COBBLESTONE_STAIRS = registerBlock("grassy_cobblestone_stairs", properties -> new StairBlock(ATCRBlocks.GRASSY_COBBLESTONE.get().defaultBlockState(), properties.strength(2f,6f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final DeferredBlock<Block> GRASSY_COBBLESTONE_SLAB = registerBlock("grassy_cobblestone_slab", properties -> new SlabBlock(properties.strength(2f,6f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> RUINED_STONE_WALL = registerBlock("ruined_stone_wall", properties -> new WallBlock(properties.requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> RUINED_COBBLESTONE_WALL = registerBlock("ruined_cobblestone_wall", properties -> new WallBlock(properties.requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> RUINED_MOSSY_COBBLESTONE_WALL = registerBlock("ruined_mossy_cobblestone_wall", properties -> new WallBlock(properties.requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> RUINED_STONE_BRICKS_WALL = registerBlock("ruined_stone_bricks_wall", properties -> new WallBlock(properties.requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> RUINED_MOSSY_STONE_BRICKS_WALL = registerBlock("ruined_mossy_stone_bricks_wall", properties -> new WallBlock(properties.requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> RUINED_CRACKED_STONE_BRICKS_WALL = registerBlock("ruined_cracked_stone_bricks_wall", properties -> new WallBlock(properties.requiresCorrectToolForDrops().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> GRASSY_COBBLESTONE_WALL = registerBlock("grassy_cobblestone_wall", properties -> new WallBlock(properties.strength(2f,6f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Function<BlockBehaviour.Properties, T> function){
         DeferredBlock<T> toReturn = BLOCKS.registerBlock(name, function);

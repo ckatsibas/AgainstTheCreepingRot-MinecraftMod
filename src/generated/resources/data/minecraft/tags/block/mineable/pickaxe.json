@@ -27,6 +27,13 @@
     "atcrmod:ruined_cracked_stone_bricks",
     "atcrmod:ruined_cracked_stone_bricks_stairs",
     "atcrmod:ruined_cracked_stone_bricks_slab",
-    "atcrmod:ruined_chiseled_stone_bricks"
+    "atcrmod:ruined_chiseled_stone_bricks",
+    "atcrmod:ruined_stone_wall",
+    "atcrmod:ruined_cobblestone_wall",
+    "atcrmod:ruined_stone_bricks_wall",
+    "atcrmod:ruined_mossy_cobblestone_wall",
+    "atcrmod:ruined_mossy_stone_bricks_wall",
+    "atcrmod:ruined_cracked_stone_bricks_wall",
+    "atcrmod:grassy_cobblestone_wall"
   ]
 }

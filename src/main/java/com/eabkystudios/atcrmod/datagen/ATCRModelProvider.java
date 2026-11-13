@@ -52,16 +52,16 @@ public class ATCRModelProvider extends ModelProvider {
         blockModels.createTrivialCube(ATCRBlocks.STEEL_BLOCK.get());
         blockModels.createTrivialCube(ATCRBlocks.SILVER_ORE.get());
         blockModels.createTrivialCube(ATCRBlocks.SILVER_DEEPSLATE_ORE.get());
-        blockModels.family(ATCRBlocks.GRASSY_COBBLESTONE.get()).stairs(ATCRBlocks.GRASSY_COBBLESTONE_STAIRS.get()).slab(ATCRBlocks.GRASSY_COBBLESTONE_SLAB.get());
+        blockModels.family(ATCRBlocks.GRASSY_COBBLESTONE.get()).stairs(ATCRBlocks.GRASSY_COBBLESTONE_STAIRS.get()).slab(ATCRBlocks.GRASSY_COBBLESTONE_SLAB.get()).wall(ATCRBlocks.GRASSY_COBBLESTONE_WALL.get());
         createPoweredBlock(blockModels, ATCRBlocks.POWERED_FURNACE.get(), TexturedModel.ORIENTABLE, blockModels.modelOutput);
         blockModels.createTrivialCube(ATCRBlocks.CLUSTER_OF_RED.get());
         blockModels.createTrivialCube(ATCRBlocks.DENSE_BLOCK_OF_RED.get());
-        blockModels.family(ATCRBlocks.RUINED_STONE.get()).stairs(ATCRBlocks.RUINED_STONE_STAIRS.get()).slab(ATCRBlocks.RUINED_STONE_SLAB.get());
-        blockModels.family(ATCRBlocks.RUINED_COBBLESTONE.get()).stairs(ATCRBlocks.RUINED_COBBLESTONE_STAIRS.get()).slab(ATCRBlocks.RUINED_COBBLESTONE_SLAB.get());
-        blockModels.family(ATCRBlocks.RUINED_MOSSY_COBBLESTONE.get()).stairs(ATCRBlocks.RUINED_MOSSY_COBBLESTONE_STAIRS.get()).slab(ATCRBlocks.RUINED_MOSSY_COBBLESTONE_SLAB.get());
-        blockModels.family(ATCRBlocks.RUINED_STONE_BRICKS.get()).stairs(ATCRBlocks.RUINED_STONE_BRICKS_STAIRS.get()).slab(ATCRBlocks.RUINED_STONE_BRICKS_SLAB.get());
-        blockModels.family(ATCRBlocks.RUINED_MOSSY_STONE_BRICKS.get()).stairs(ATCRBlocks.RUINED_MOSSY_STONE_BRICKS_STAIRS.get()).slab(ATCRBlocks.RUINED_MOSSY_STONE_BRICKS_SLAB.get());
-        blockModels.family(ATCRBlocks.RUINED_CRACKED_STONE_BRICKS.get()).stairs(ATCRBlocks.RUINED_CRACKED_STONE_BRICKS_STAIRS.get()).slab(ATCRBlocks.RUINED_CRACKED_STONE_BRICKS_SLAB.get());
+        blockModels.family(ATCRBlocks.RUINED_STONE.get()).stairs(ATCRBlocks.RUINED_STONE_STAIRS.get()).slab(ATCRBlocks.RUINED_STONE_SLAB.get()).wall(ATCRBlocks.RUINED_STONE_WALL.get());
+        blockModels.family(ATCRBlocks.RUINED_COBBLESTONE.get()).stairs(ATCRBlocks.RUINED_COBBLESTONE_STAIRS.get()).slab(ATCRBlocks.RUINED_COBBLESTONE_SLAB.get()).wall(ATCRBlocks.RUINED_COBBLESTONE_WALL.get());
+        blockModels.family(ATCRBlocks.RUINED_MOSSY_COBBLESTONE.get()).stairs(ATCRBlocks.RUINED_MOSSY_COBBLESTONE_STAIRS.get()).slab(ATCRBlocks.RUINED_MOSSY_COBBLESTONE_SLAB.get()).wall(ATCRBlocks.RUINED_MOSSY_COBBLESTONE_WALL.get());
+        blockModels.family(ATCRBlocks.RUINED_STONE_BRICKS.get()).stairs(ATCRBlocks.RUINED_STONE_BRICKS_STAIRS.get()).slab(ATCRBlocks.RUINED_STONE_BRICKS_SLAB.get()).wall(ATCRBlocks.RUINED_STONE_BRICKS_WALL.get());
+        blockModels.family(ATCRBlocks.RUINED_MOSSY_STONE_BRICKS.get()).stairs(ATCRBlocks.RUINED_MOSSY_STONE_BRICKS_STAIRS.get()).slab(ATCRBlocks.RUINED_MOSSY_STONE_BRICKS_SLAB.get()).wall(ATCRBlocks.RUINED_MOSSY_STONE_BRICKS_WALL.get());
+        blockModels.family(ATCRBlocks.RUINED_CRACKED_STONE_BRICKS.get()).stairs(ATCRBlocks.RUINED_CRACKED_STONE_BRICKS_STAIRS.get()).slab(ATCRBlocks.RUINED_CRACKED_STONE_BRICKS_SLAB.get()).wall(ATCRBlocks.RUINED_CRACKED_STONE_BRICKS_WALL.get());
         blockModels.createTrivialCube(ATCRBlocks.RUINED_CHISELED_STONE_BRICKS.get());
     }
 
@@ -70,7 +70,8 @@ public class ATCRModelProvider extends ModelProvider {
         MultiVariant normalModel = plainVariant(provider.create(poweredBlock, modelOutput));
         Material frontTexture = TextureMapping.getBlockTexture(poweredBlock, "_front_on");
         Material topTexture = TextureMapping.getBlockTexture(poweredBlock, "_top_on");
-        MultiVariant litModel = plainVariant(provider.get(poweredBlock).updateTextures(textures -> textures.put(TextureSlot.FRONT, frontTexture)).updateTextures(textures -> textures.put(TextureSlot.TOP, topTexture)).createWithSuffix(poweredBlock, "_on", modelOutput));
+        MultiVariant litModel = plainVariant(provider.get(poweredBlock).updateTextures(textures ->
+                textures.put(TextureSlot.FRONT, frontTexture)).updateTextures(textures -> textures.put(TextureSlot.TOP, topTexture)).createWithSuffix(poweredBlock, "_on", modelOutput));
         blockModels.blockStateOutput.accept(MultiVariantGenerator.dispatch(poweredBlock).with(createBooleanModelDispatch(BlockStateProperties.LIT, litModel, normalModel)).with(ROTATION_HORIZONTAL_FACING));
     }
 }

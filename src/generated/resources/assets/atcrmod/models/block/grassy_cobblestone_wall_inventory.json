@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "atcrmod:block/grassy_cobblestone"
+  }
+}
